@@ -64,7 +64,7 @@ class RepositoryConvention {
         /**
          * DevOps Boot 版本号
          */
-        private val DEVOPS_BOOT_VERSION: String = DevOpsVersionExtractor.extractVersion().orEmpty()
+        private val DEVOPS_BOOT_VERSION: String = "0.4.0-SNAPSHOT"//DevOpsVersionExtractor.extractVersion().orEmpty()
 
         /**
          * DevOps BOM 文件坐标

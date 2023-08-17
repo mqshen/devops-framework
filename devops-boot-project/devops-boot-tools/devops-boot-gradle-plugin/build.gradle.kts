@@ -1,7 +1,11 @@
+val snapshotRepo: String by project
+val allJarUsername: String by project
+val allJarPassword: String by project
+
 plugins {
     kotlin("jvm")
     id("java-gradle-plugin")
-    id("publish")
+    id("com.gradle.plugin-publish") version "1.1.0"
 }
 
 description = "DevOps Boot Gradle Plugin"
@@ -19,12 +23,28 @@ dependencies {
 }
 
 gradlePlugin {
+    website = "https://ifp3-dev.cloudbills.cn/"
+    vcsUrl = "https://ifp3-dev.cloudbills.cn/"
     plugins {
         create("DevOpsBootPlugin") {
             id = "com.tencent.devops.boot"
             displayName = "DevOps Boot Gradle Plugin"
             description = "DevOps Boot Gradle Plugin"
+            tags = listOf("DevOps")
             implementationClass = "com.tencent.devops.DevOpsBootPlugin"
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url = uri(snapshotRepo)
+            isAllowInsecureProtocol = true
+            credentials {
+                username = allJarUsername
+                password = allJarPassword
+            }
         }
     }
 }

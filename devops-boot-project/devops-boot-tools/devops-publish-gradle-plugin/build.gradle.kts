@@ -1,7 +1,6 @@
 plugins {
     kotlin("jvm")
     id("java-gradle-plugin")
-    id("publish")
 }
 
 description = "DevOps Publish Gradle Plugin"

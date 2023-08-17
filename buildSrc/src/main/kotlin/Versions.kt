@@ -1,6 +1,6 @@
 object Release {
     const val Group = "com.tencent.devops"
-    const val Version = "0.1.0-SNAPSHOT"
+    const val Version = "0.4.0-SNAPSHOT"
 }
 
 object Versions {
@@ -10,7 +10,7 @@ object Versions {
     const val SpringBoot = "3.1.2"
     const val SpringCloud = "2022.0.3"
     const val DependencyManagement = "1.1.2"
-    const val NexusPublish = "0.4.0"
+    const val NexusPublish = "2.0.0-rc-1"
     const val NexusStaging = "0.22.0"
     const val KtLint = "0.41.0"
 }

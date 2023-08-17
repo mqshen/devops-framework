@@ -30,6 +30,9 @@ class SpringCloudConvention {
                 project.dependencies.add(IMPLEMENTATION, K8S_CONFIG)
                 project.dependencies.add(IMPLEMENTATION, K8S_DISCOVERY)
             }
+            AssemblyMode.OTHER -> {
+
+            }
         }
     }
 

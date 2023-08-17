@@ -17,3 +17,18 @@ includeAll("devops-boot-project:devops-boot-tools")
 
 includeAll("devops-boot-project:devops-boot-core:devops-plugin")
 includeAll("devops-boot-project:devops-boot-core:devops-schedule")
+
+pluginManagement {
+    repositories {
+        mavenLocal()
+        if (System.getenv("GITHUB_WORKFLOW") == null) {
+            maven(url = "https://mirrors.tencent.com/nexus/repository/gradle-plugins/")
+            maven(url = "https://mirrors.tencent.com/nexus/repository/maven-public")
+            maven(url = "https://repo.spring.io/milestone")
+        } else {
+            mavenCentral()
+            maven(url = "https://repo.spring.io/milestone")
+            gradlePluginPortal()
+        }
+    }
+}
